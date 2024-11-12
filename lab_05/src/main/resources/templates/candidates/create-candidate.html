@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Candidate</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Lab 05</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/companies">Company</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/candidates">Candidate</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/skills">Skill</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Create Candidate Form -->
+<div class="container mt-4">
+    <h2>Create Candidate</h2>
+    <form action="/candidates/save" method="post">
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter full name" required>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" class="form-control" id="dob" name="dob" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number" required>
+        </div>
+        <h4>Address</h4>
+
+        <div class="form-group">
+            <label for="number">Number</label>
+            <input type="text" class="form-control" id="number" name="number" placeholder="Enter house number" required>
+        </div>
+        <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" class="form-control" id="street" name="street" placeholder="Enter street" required>
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" required>
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select class="form-control" id="country" name="country" required>
+                <option th:each="country : ${countryCodes}" th:value="${country}" th:text="${country}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="zipcode">Zip Code</label>
+            <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Enter zip code" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Candidate</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

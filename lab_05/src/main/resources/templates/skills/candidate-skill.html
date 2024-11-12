@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Lab 05</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/companies">Company</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/candidates">Candidate</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/skills">Skill</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Search Bar -->
+<div class="container mt-4">
+    <h2>Search Skill</h2>
+    <div class="d-flex justify-content-between">
+        <form class="form-inline">
+            <input class="form-control mr-4" type="search" placeholder="Search by candidate name" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <a th:href="@{/skills/addSkill/{id}(id=${candidateSkillPages.content[0].can.id})}" class="btn btn-primary">Add Skill</a>
+    </div>
+</div>
+
+<!--Candidate Information-->
+<div class="container mt-4">
+    <h2>Candidate Information</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${candidateSkillPages.content[0].can.fullName}"></h5>
+            <p class="card-text"><strong>Email:</strong> <span th:text="${candidateSkillPages.content[0].can.email}"></span></p>
+        </div>
+    </div>
+</div>
+
+<!-- Skill List -->
+<div class="container mt-4">
+    <h2>Skill List</h2>
+    <div class="row">
+        <div class="col-md-4" th:each="canSkill : ${candidateSkillPages.content}">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${canSkill.skill.skillName}"></h5>
+                    <p class="card-text"><strong>Description:</strong> <span th:text="${canSkill.skill.skillDescription}"></span></p>
+                    <p class="card-text"><strong>Type:</strong> <span th:text="${canSkill.skill.type}"></span></p>
+                    <p class="card-text"><strong>Level:</strong> <span th:text="${canSkill.skillLevel}"></span></p>
+                    <p class="card-text"><strong>More Infos:</strong> <span th:text="${canSkill.moreInfos}"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item" th:if="${candidateSkillPages.getTotalPages()} > 0" th:each="pageNumber : ${pageNumbers}">
+                <a class="page-link" th:href="@{/skills/candidate/{candidateId}(candidateId=${candidateId},size=${candidateSkillPages.size}, page=${pageNumber})}"
+                   th:text="${pageNumber}"
+                ></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
