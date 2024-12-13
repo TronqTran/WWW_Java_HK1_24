@@ -1,7 +1,11 @@
 # Lab 05: Dự Án Web Spring Boot
+
 Môn: Lập trình WWW (Java)
+
 Giáo viên hướng dẫn: Võ Văn Hải
+
 Sinh viên thực hiện: Trần Bình Trọng
+
 MSSV: 20072511
 
 ##  Mục lục
@@ -32,79 +36,79 @@ công việc phù hợp.
 
 ## Cấu Trúc Dự Án
 
-Lab05Application
-│
-├── src
-│   └── main
-│       ├── java
-│       │   └── vn
-│       │       └── edu
-│       │           └── iuh
-│       │               ├── backend
-│       │               │   ├── dtos
-│       │               │   │   ├── CandidateSkillDto.java
-│       │               │   │   ├── JobSkillDto.java
-│       │               │   │   └── ...
-│       │               │   ├── enums
-│       │               │   │   ├── SkillLevel.java
-│       │               │   │   ├── SkillType.java
-│       │               │   │   └── ...
-│       │               │   ├── models
-│       │               │   │   ├── Address.java
-│       │               │   │   ├── Candidate.java
-│       │               │   │   ├── Company.java
-│       │               │   │   ├── Job.java
-│       │               │   │   ├── JobSkill.java
-│       │               │   │   ├── Skill.java
-│       │               │   │   └── ...
-│       │               │   ├── repositories
-│       │               │   │   ├── AddressRepository.java
-│       │               │   │   ├── CandidateRepository.java
-│       │               │   │   ├── CompanyRepository.java
-│       │               │   │   ├── JobRepository.java
-│       │               │   │   ├── JobSkillRepository.java
-│       │               │   │   ├── SkillRepository.java
-│       │               │   │   └── ...
-│       │               │   ├── services
-│       │               │   │   ├── AddressService.java
-│       │               │   │   ├── CandidateService.java
-│       │               │   │   ├── CompanyService.java
-│       │               │   │   ├── JobService.java
-│       │               │   │   ├── JobSkillService.java
-│       │               │   │   ├── SkillService.java
-│       │               │   │   └── ...
-│       │               │   └── Lab05Application.java
-│       │               └── frontend
-│       │                   ├── controllers
-│       │                   │   ├── CandidateController.java
-│       │                   │   ├── CompanyController.java
-│       │                   │   ├── JobController.java
-│       │                   │   ├── SkillController.java
-│       │                   │   └── ...
-│       │                   └── ...
-│       └── resources
-│           ├── application.properties
-│           └── templates
-│               ├── candidates
-│               │   ├── candidates.html
-│               │   ├── create-candidate.html
-│               │   ├── update-candidate.html
-│               │   ├── candidates-paging.html
-│               │   └── ...
-│               ├── companies
-│               │   ├── companies.html
-│               │   ├── create-company.html
-│               │   └── ...
-│               ├── jobs
-│               │   ├── jobs.html
-│               │   ├── job-candidate.html
-│               │   └── ...
-│               ├── skills
-│               │   ├── skills.html
-│               │   ├── add-skill.html
-│               │   └── ...
-│               └── ...
-└── ...
+- Lab05Application
+- │
+- ├── src
+- │   └── main
+- │       ├── java
+- │       │   └── vn
+- │       │       └── edu
+- │       │           └── iuh
+- │       │               ├── backend
+- │       │               │   ├── dtos
+- │       │               │   │   ├── CandidateSkillDto.java
+- │       │               │   │   ├── JobSkillDto.java
+- │       │               │   │   └── ...
+- │       │               │   ├── enums
+- │       │               │   │   ├── SkillLevel.java
+- │       │               │   │   ├── SkillType.java
+- │       │               │   │   └── ...
+- │       │               │   ├── models
+- │       │               │   │   ├── Address.java
+- │       │               │   │   ├── Candidate.java
+- │       │               │   │   ├── Company.java
+- │       │               │   │   ├── Job.java
+- │       │               │   │   ├── JobSkill.java
+- │       │               │   │   ├── Skill.java
+- │       │               │   │   └── ...
+- │       │               │   ├── repositories
+- │       │               │   │   ├── AddressRepository.java
+- │       │               │   │   ├── CandidateRepository.java
+- │       │               │   │   ├── CompanyRepository.java
+- │       │               │   │   ├── JobRepository.java
+- │       │               │   │   ├── JobSkillRepository.java
+- │       │               │   │   ├── SkillRepository.java
+- │       │               │   │   └── ...
+- │       │               │   ├── services
+- │       │               │   │   ├── AddressService.java
+- │       │               │   │   ├── CandidateService.java
+- │       │               │   │   ├── CompanyService.java
+- │       │               │   │   ├── JobService.java
+- │       │               │   │   ├── JobSkillService.java
+- │       │               │   │   ├── SkillService.java
+- │       │               │   │   └── ...
+- │       │               │   └── Lab05Application.java
+- │       │               └── frontend
+- │       │                   ├── controllers
+- │       │                   │   ├── CandidateController.java
+- │       │                   │   ├── CompanyController.java
+- │       │                   │   ├── JobController.java
+- │       │                   │   ├── SkillController.java
+- │       │                   │   └── ...
+- │       │                   └── ...
+- │       └── resources
+- │           ├── application.properties
+- │           └── templates
+- │               ├── candidates
+- │               │   ├── candidates.html
+- │               │   ├── create-candidate.html
+- │               │   ├── update-candidate.html
+- │               │   ├── candidates-paging.html
+- │               │   └── ...
+- │               ├── companies
+- │               │   ├── companies.html
+- │               │   ├── create-company.html
+- │               │   └── ...
+- │               ├── jobs
+- │               │   ├── jobs.html
+- │               │   ├── job-candidate.html
+- │               │   └── ...
+- │               ├── skills
+- │               │   ├── skills.html
+- │               │   ├── add-skill.html
+- │               │   └── ...
+- │               └── ...
+- └── ...
 
 - src/main/java/vn/edu/iuh: Đây là đường dẫn chính cho mã nguồn Java của dự án.
     - backend: Chứa các thành phần của backend, bao gồm DTOs, enums, models, repositories, và services.
@@ -118,13 +122,15 @@ Lab05Application
 
 ## Hướng dẫn sử dụng
 
-Truy cập vào trang danh sách ứng viên: http://localhost:8080/candidates
-ruy cập vào trang danh sách công ty: http://localhost:8080/companies
+- Truy cập vào trang danh sách ứng viên: http://localhost:8080/candidates
+- Truy cập vào trang danh sách công ty: http://localhost:8080/companies
 
 ## Hiện thực
 
 Thực hiện các chức năng CRUD cho Candidate, Company, Skill.
+
 Tìm các Công việc phù hợp cho từng Ứng viên.
+
 Tìm các Ứng viên phù hợp cho từng Công việc.
 
 - Danh sách Ứng viên: ![candidateList](./lib/img/candidateList.png)
