@@ -8,6 +8,8 @@ Sinh viên thực hiện: Trần Bình Trọng
 
 MSSV: 20072511
 
+- Báo cáo: ![Tại đây](./lib/doc/BaoCaoLab05.docx)
+
 ##  Mục lục
 
 - [Mở đầu](#mở-đầu)
